@@ -57,28 +57,21 @@ class heap_struct:
         return y
 
 
-def heap_sort(X):
-
-    heap_arr = heap_struct()
-    sort_X = np.array([])
-    # heap構造に追加
-    for i in range(len(X)):
-        heap_arr.add(X[i])
-
-    # heap構造から抽出
-    for i in range(len(X)):
-        y = heap_arr.pick()
-        sort_X = np.insert(sort_X,i,y)
-
-    return sort_X
-
 def main():
 
     X = np.array([random.randrange(100) for i in range(10)])
-    sort_ru = heap_sort(X)
-    print(X)
-    print(sort_ru)
-
+    heap_arr = heap_struct()
+    heap_arr.add(X[0])
+    heap_arr.add(X[1])
+    heap_arr.add(X[2])
+    heap_arr.add(X[3])
+    heap_arr.add(X[4])
+    print(heap_arr.heap)
+    print(heap_arr.pick())
+    print(heap_arr.pick())
+    print(heap_arr.pick())
+    print(heap_arr.pick())
+    print(heap_arr.pick())
 
 if __name__ == '__main__':
     main()
